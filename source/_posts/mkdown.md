@@ -32,9 +32,10 @@ tags:
 ---
 
 ### 5、图片
+#### 5.1 网络
 ![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
 u=702257389,1274025419&fm=27&gp=0.jpg "区块链")
-
+#### 5.2 本地
 ![totoro](mkdown/totoro.jpg)
 
 ---
@@ -61,7 +62,7 @@ u=702257389,1274025419&fm=27&gp=0.jpg "区块链")
 
 ---
 
-### 8、表格1
+### 8、表格
 表头|表头|表头
 :--|:--:|--:
 左对齐|居中|右对齐
@@ -70,12 +71,13 @@ u=702257389,1274025419&fm=27&gp=0.jpg "区块链")
 ---
 
 ### 9、代码
+#### 9.1 代码
 ```
   代码...
   代码...
   代码...
 ```
-
+#### 9.2 python代码
 ```python
 @requires_authorization
 def somefunc(param1='', param2=0):
@@ -87,7 +89,7 @@ def somefunc(param1='', param2=0):
 class SomeClass:
     pass
 ```
-
+#### 9.2 javascript代码
 ``` javascript
 /**
 * nth element in the fibonacci series.
