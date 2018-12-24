@@ -37,15 +37,9 @@ u=702257389,1274025419&fm=27&gp=0.jpg "区块链")
 
 ---
 
-### 6、
-#### 6.1 超链接
+### 6、超链接
 [简书](http://jianshu.com)
 [百度](http://baidu.com)
-
-#### 6.2新建页面超链接
-<a href="超链接地址" target="_blank">超链接名</a>
-示例
-<a href="https://www.jianshu.com/u/1f5ac0cf6a8b" target="_blank">简书</a>
 
 ---
 ### 7、
@@ -114,7 +108,7 @@ document.write(fib(10));
 
 ---
 
-### 10、流程图1
+### 10、流程图
 ```flow
 st=>start: Start:>https://www.zybuluo.com
 io=>inputoutput: verification
