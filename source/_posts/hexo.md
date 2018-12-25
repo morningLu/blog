@@ -2,6 +2,8 @@
 title: hexo
 date: 2018-12-24 20:29:41
 tags:
+categories:
+    - hexo环境搭建
 ---
 ### 1、hexo环境搭建
 0. 参考网站 [Hexo+GitHub搭建博客CSDN](https://blog.csdn.net/qq_27754983/article/details/76143478)
@@ -35,3 +37,14 @@ tags:
 2. git-bash 可以上传本地图片的插件安装: npm install hexo-asset-image --save
 3. hexo n "xxxx" (xxxx为对应md文件名字)
 4. ![图片描述]<font face="黑体">(</font>xxxx/图片名.jpg<font face="黑体">)</font>
+
+### 3、hexo 创建分类
+1. hexo new page xxxx (xxxx为分类名)
+2. 在文章的最上面添加 categories:
+```
+title: 摄影基础课
+date: 2018-12-25 17:10:26
+tags:
+categories:
+    - 摄影
+```

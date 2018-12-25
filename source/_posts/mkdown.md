@@ -1,7 +1,9 @@
 ---
-title: mkdown
+title: mkdown语法
 date: 2018-12-24 16:09:57
 tags:
+categories:
+    - hexo环境搭建
 ---
 ---
 
