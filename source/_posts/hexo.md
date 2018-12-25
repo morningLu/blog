@@ -48,3 +48,8 @@ tags:
 categories:
     - 摄影
 ```
+
+### 4、 hexo 项目迁移（在新的电脑上继续写博客）
+1. 把hexo init创建的文件夹全部提交到git仓库（需要新建一个仓库）
+2. 创建文件夹拉取代码
+3. git bash执行 npm install hexo --save
