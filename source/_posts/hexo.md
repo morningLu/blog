@@ -3,7 +3,7 @@ title: hexo
 date: 2018-12-24 20:29:41
 tags:
 categories:
-    - hexo环境搭建
+    - 技术(未分类)
 ---
 ### 1、hexo环境搭建
 0. 参考网站 [Hexo+GitHub搭建博客CSDN](https://blog.csdn.net/qq_27754983/article/details/76143478)
