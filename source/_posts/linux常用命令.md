@@ -34,7 +34,11 @@ tail * -f | grep -E 'Traceback|traceback' -a50
 ```
 grep '检索内容' ./ -r
 ```
-7. 查看进程
+8. 知道文件名查文件
+```
+find ./ -name xxxx
+```
+7. 查看进程&进程配置文件
 ```
 ps -ef | grep desc
 ```
@@ -75,6 +79,32 @@ SELECT * FROM `table_name01` WHERE  gname LIKE '%xxx%' UNION ALL SELECT * FROM `
 ```
 redis-cli -h 127.0.0.1 -p 6379 -n 0 keys "VPOKR_uifo*" | xargs redis-cli -h 127.0.0.1 -p 6379 -n 0 del
 ```
+2. 启动停用重启
+```
+redis-server /etc/redis/redis.conf  # 启用redis
+redis-server stop                   # 停止
+redis-server restart                # 从启
+```
+3. 杂
+```
+select n  # 切换库
+TTL key  # 剩余生存时间s
+type key  # key的类型
+zrange zsetname 0 -1 withscores  # 遍历zset的key score
+hset hashname field v  # 设置hash字段的值
+hlen hashname  # hash的字段数
+hgetall hashname  # hash所有字段和值
+hmget hashname field  # 获取hash中field值
+sadd setname v  # 给集合添加元素
+smembers setname  # 查看集合内的所有元素
+lpush listname v  # 给列表中左插入一个值
+lrange listname index_min index_max  # 获取列表中第min到第max的元素
+set strname v  # 设置str类型的值
+get strname  # 获取str类型的值
+```
+4. 反序列化
+  * redis使用要注意反序列化以后hash里的k,v都会变成str
+  * 使用rds.set('key', json.dumps({1: 2})), json.loads(rds.get('key'))出来1会变成str 2不会
 
 ### mongodb
 1. 用户
@@ -99,18 +129,19 @@ db.createUser(
 3. 表
   ```
   db.createCollection("table_name", {capped:true, size:1024})  # 创建一个capped表
+  db.table_name.insert({x: 1,y: 2,z: 3})  # 增
   db.table_name.drop()  # 删表
-  # 查
+  # 查 支持二级查找
   db.table_name.find({
     "fieldname1": {$gt: min},
-    "fieldname2": v
-    }).limit(5).sort({fieldname1: 1, fieldname2: -1}).pretty()
+    "fieldname2.sub_fieldname": v
+    }).limit(5).sort({"fieldname1": 1, "fieldname2.sub_fieldname": -1}).pretty()
   # 同一字段and查询
   db.table_name.find({
     $and: [{"fieldname":{$gt:min}}, {"fieldname":{$lt:max}} ]
     })
   db.table_name.find().limit(2).skip(0)  # 从第0个位置开始查2条数据
-  db.table_name.insert({x: 1,y: 2,z: 3})  # 增
+  db.table_name.ensureIndex({"fieldname": 1})    # 创建索引
+  # 聚合 通过fieldname1的值进行分组,求fieldname2的和
+  db.table_name.aggregate( [{$group: {_id: "$fieldname1", val: {$sum: $fieldname2} } }] )
   ```
-
-4. 性能
