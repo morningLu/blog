@@ -82,3 +82,8 @@ git stash pop  # 弹出最近的一次保存
 ```
 git blame ./path/file_name | grep 'code' -a5  # 查看code的修改人和修改时间
 ```
+
+11. init
+```
+git init  # 在你想要纳入git管理的文件夹下执行 然后关联远程仓库就可以使用git了
+```
