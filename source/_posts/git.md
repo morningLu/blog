@@ -23,6 +23,7 @@ git diff commit_old commit_new  # commit_new和commit_old的差异
 git show commit  # 查看某次提交的内容
 git add .  # 代码从工作区上交到缓冲区
 git commit -am "log"  # 代码从缓冲区提交的本地仓库
+git commit --amend  # 修改最近一次commit
 git push  # 代码从本地仓库推到远程仓库
 git push -f  # 以本地代码为准强制推送到远程仓库
 --
