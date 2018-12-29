@@ -86,14 +86,14 @@ def say(something):       # 被装饰函数
 ```
 4. 带参数的装饰器，数字是函数执行的顺序
 ```python
-def logging(level):                           # 1装饰器的名字 传入装饰器的参数
-    @functools.wraps(func)                    # 2可以保证装饰器不会对被装饰函数造成影响
-    def wrapper(func):                        # 4传入被装饰函数
+def logging(level):                           # 1装饰器的名字 传入装饰器的参数       
+    def wrapper(func):                        # 3传入被装饰函数
+        @functools.wraps(func)                # 4可以保证装饰器不会对被装饰函数造成影响
         def inner_wrapper(*args, **kwargs):   # 6获取被装饰函数的变量
             pass                              # 7你已经拿到了所有变量，这里就可以处理对应相关的业务逻辑
             return func(*args, **kwargs)      # 8运行并返回被装饰的函数
         return inner_wrapper                  # 5执行内部装饰函数
-    return wrapper                            # 3执行装饰函数
+    return wrapper                            # 2执行装饰函数
 @logging(level='INFO')     # 调用装饰器
 def say(something):        # 被装饰函数
     pass                   # 被装饰函数业务逻辑
