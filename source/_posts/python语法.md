@@ -90,7 +90,7 @@ def logging(level):                           # 1装饰器的名字 传入装饰
     @functools.wraps(func)                    # 2可以保证装饰器不会对被装饰函数造成影响
     def wrapper(func):                        # 4传入被装饰函数
         def inner_wrapper(*args, **kwargs):   # 6获取被装饰函数的变量
-            pass                              # 7你已经拿到了变量，这里就可以处理对应相关的业务逻辑
+            pass                              # 7你已经拿到了所有变量，这里就可以处理对应相关的业务逻辑
             return func(*args, **kwargs)      # 8运行并返回被装饰的函数
         return inner_wrapper                  # 5执行内部装饰函数
     return wrapper                            # 3执行装饰函数
