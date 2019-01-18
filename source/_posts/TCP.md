@@ -5,7 +5,6 @@ tags:
 categories:
     - 技术(未分类)
 ---
-### [三次握手，四次挥手](https://mp.weixin.qq.com/s/YTtvp6gEXesM0WiuTGDW2Q)
 ### TCP简介
 1. TCP是一种面向连接的单播协议，在发送数据前，通信双方必须在彼此间建立一条连接。所谓的“连接”，其实是客户端和服务器的内存里保存的一份关于对方的信息，如ip地址、端口号等。
 2. TCP可以看成是一种字节流，它会处理IP层或以下的层的丢包、重复以及错误问题。在连接的建立过程中，双方需要交换一些连接的参数。这些参数可以放在TCP头部。
@@ -100,3 +99,7 @@ echo 15000 > /proc/sys/net/ipv4/tcp_max_tw_buckets
 echo 1 > /proc/sys/net/ipv4/tcp_tw_reuse
 echo 1 >  /proc/sys/net/ipv4/tcp_tw_recycle
 ```
+
+### 参考资料
+* [三次握手，四次挥手 https://mp.weixin.qq.com/s/YTtvp6gEXesM0WiuTGDW2Q](https://mp.weixin.qq.com/s/YTtvp6gEXesM0WiuTGDW2Q)
+* [TCP参数设置 https://www.cnblogs.com/zengkefu/p/5635088.html](https://www.cnblogs.com/zengkefu/p/5635088.html)
