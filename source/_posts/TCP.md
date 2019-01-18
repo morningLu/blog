@@ -1,5 +1,5 @@
 ---
-title: 从3次握手4次挥手浅探TCP
+title: TCP
 date: 2019-01-17 11:35:07
 tags:
 categories:
@@ -23,11 +23,13 @@ echo 5 > /proc/sys/net/ipv4/tcp_keepalive_probes
 1. TCP的流量控制由滑动窗口来实现的，滑动窗口控制流量取决于接收方的窗口大小。
 2. /proc/sys/net/core/rmem_max 定义了接收窗口可以使用的最大值，可以根据BDP值进行调整。
 3. /proc/sys/net/core/wmem_max 定义了发送窗口可以使用的最大值，可以根据BDP值进行调整。
-4. ![滑动窗口](TCP/滑动窗口.jpg)
+4. 滑动窗口
+![滑动窗口](TCP/滑动窗口.jpg)
 
 ### 有序
 * TCP是有序的，保持有序是在TCP这一层做的，TCP层在有小序列号的报文段被填满时才会将大段的报文交给应用层
-* ![4层协议](TCP/4层协议.png)
+* 4层协议
+![4层协议](TCP/4层协议.png)
 
 ### TCP头
 * ACK —— 确认。ACK是累积的，一个确认字节号N的ACK表示所有直到N的字节（不包括N）已经成功被接收了
@@ -39,7 +41,8 @@ echo 5 > /proc/sys/net/ipv4/tcp_keepalive_probes
     * M是一个计时器，每隔4毫秒加1。
     * F是一个Hash算法，根据源IP、目的IP、源端口、目的端口生成一个随机数值。
     * tcp序列号回绕
-* ![TCP头](TCP/TCP头.jpg)
+* TCP头
+![TCP头](TCP/TCP头.jpg)
 
 ### TCP序列号回绕
 * pass占位(后续更新)
@@ -47,8 +50,10 @@ echo 5 > /proc/sys/net/ipv4/tcp_keepalive_probes
 ### 三次握手，四次挥手
 1. 三次握手，目的就是双方都能明确自己和对方的收、发是正常的
 2. 四次挥手，因为tcp是双工传输，一个FIN一个ACK只关闭了一个方向的传输
-3. ![三次握手，四次挥手](TCP/三次握手四次挥手.jpg)
-4. ![状态变迁图](TCP/状态变更.jpg)
+3. 三次握手，四次挥手
+![三次握手，四次挥手](TCP/三次握手四次挥手.jpg)
+4. 状态变迁图
+![状态变迁图](TCP/状态变更.jpg)
 
 ### syn flood攻击
 1. syn flood属于Dos攻击的一种。
