@@ -2,6 +2,8 @@
 title: django多库
 date: 2019-01-19 14:54:39
 tags:
+categories:
+    - python
 ---
 #### 1. 创建项目
 ```
