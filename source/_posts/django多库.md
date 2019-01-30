@@ -55,7 +55,7 @@ DATABASES = {
 ```
 
 #### 5. 设置路由和关联model
-  ##### 1. 基类
+  ##### 5.1. 基类
   ```py
   class RouterBase(object):
       DB_NAME = None
@@ -96,7 +96,7 @@ DATABASES = {
           return None
   ```
 
-  ##### 2. 子类
+  ##### 5.2. 子类
   ```py
   class RouterApp01(RouterBase):
       # app01的路由器
@@ -108,14 +108,14 @@ DATABASES = {
       APP_NAME = 'app02'
   ```
 
-  ##### 3. 修改mysite/settings.py中路由类
+  ##### 5.3. 修改mysite/settings.py中路由类
   ```py
   DATABASE_ROUTERS = [
       'xx.xx.RouterApp01',  # xx是对应的路由类的路径
       'xx.xx.RouterApp02',
   ]
   ```
-  ##### 4. 在models.py中表类添加标签
+  ##### 5.4. 在models.py中表类添加标签
   ```py
   class Model01(models.Model):
       class Meta:
