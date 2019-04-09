@@ -3,7 +3,7 @@ title: git
 date: 2018-12-27 16:21:15
 tags:
 categories:
-    - 技术(未分类)
+    - git
 ---
 
 1. 签名&邮箱

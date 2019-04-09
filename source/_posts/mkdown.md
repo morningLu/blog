@@ -3,7 +3,7 @@ title: mkdown语法
 date: 2018-12-24 16:09:57
 tags:
 categories:
-    - 技术(未分类)
+    - 博客搭建
 ---
 ---
 
