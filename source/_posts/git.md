@@ -78,7 +78,7 @@ git stash list  # 查看保存在本地的修改
 git stash pop  # 弹出最近的一次保存
 ```
 
-10. 背锅侠（好像不用rebase&--no-ff的时候查不出来 未验证）
+10. 背锅侠（好像不用rebase&\-\-no-ff的时候查不出来 未验证）
 ```
 git blame ./path/file_name | grep 'code' -a5  # 查看code的修改人和修改时间
 ```
