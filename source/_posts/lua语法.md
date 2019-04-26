@@ -145,6 +145,29 @@ end
 io.write('\n')
 ```
 10. lua的垃圾内存回收机制，当一块内存没有被引用后就会被回收，去除引用的方式是直接给变量赋值为nil
+11. 运算符
+    * ~= 是不等于  
+    * ..链接两个字符串
+    * \# 返回字符或者表的长度
+12. string的三种表示 '' "" [[]]，string的拼接也可以用format
+```lua
+x='1'
+y="2"
+z=[[3]]
+print(string.format("%s+%s=%s",x,y,z))
+```
+13. 可变参
+```lua
+function average(...)
+   result = 0
+   local arg={...}    --> arg 为一个表，局部变量
+   for i,v in ipairs(arg) do
+      result = result + v
+   end
+   print("总共传入 " .. #arg .. " 个数")  --> #arg是传入可变参个数
+   return result/#arg
+end
+```
 
 ### table实现面向对象
 1. lua实现面向对象的机制
