@@ -159,13 +159,12 @@ print(string.format("%s+%s=%s",x,y,z))
 13. 可变参
 ```lua
 function average(...)
-   result = 0
-   local arg={...}    --> arg 为一个表，局部变量
-   for i,v in ipairs(arg) do
-      result = result + v
+   sum = 0
+   local args={...}    
+   for i,v in ipairs(args) do
+      sum = sum + v
    end
-   print("总共传入 " .. #arg .. " 个数")  --> #arg是传入可变参个数
-   return result/#arg
+   return sum/#args
 end
 ```
 
