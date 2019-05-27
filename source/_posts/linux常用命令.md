@@ -13,6 +13,11 @@ categories:
 date                                    # 查看时间
 date -s "2018-12-24 10:09:12"           # 修改时间
 hwclock --hctosys                       # 恢复硬件时间
+hwclock -w                              # 同步系统时间到硬件时间
+ntpdate time.windows.com                # 系统时间同步到网络时间
+
+mv /etc/localtime /etc/localtime.bak    # 修改时区
+ln -s /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime
 ```
 2. 开机执行
 ```
